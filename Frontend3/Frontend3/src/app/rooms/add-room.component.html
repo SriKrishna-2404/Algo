@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>Add Room</h2>
+
+  <label>Select Hotel:</label>
+  <select [(ngModel)]="room.hotelId" (change)="getRooms()">
+    <option value="">-- Select Hotel --</option>
+    <option *ngFor="let h of hotels" [value]="h.id">
+      {{h.name}}
+    </option>
+  </select>
+
+  <input type="text" placeholder="Room Type" [(ngModel)]="room.type">
+
+  <input type="number" placeholder="Price" [(ngModel)]="room.price">
+
+  <input type="number" placeholder="Available Count" [(ngModel)]="room.availableCount">
+
+  <button (click)="addRoom()">Add Room</button>
+
+  <hr>
+
+  <h3>Rooms List</h3>
+
+  <ul>
+    <li *ngFor="let r of rooms">
+      {{r.type}} 
+      <span>₹{{r.price}} | Available: {{r.availableCount}}</span>
+    </li>
+  </ul>
+
+</div>
