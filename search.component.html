@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Find Your Perfect Stay</h1>
+
+  <div class="search-box">
+    <input 
+      type="text" 
+      [(ngModel)]="location"
+      name="location"
+      placeholder="Enter city (e.g. Chennai)"
+    />
+    <button (click)="search()">Search</button>
+  </div>
+
+  <div class="results" *ngIf="hotels.length > 0">
+    <div class="card" *ngFor="let hotel of hotels">
+      <h3>{{ hotel.name }}</h3>
+      <p>📍 {{ hotel.location }}</p>
+      <p class="price">₹1999 / night</p>
+      <button class="book-btn">Book Now</button>
+    </div>
+  </div>
+</div>
