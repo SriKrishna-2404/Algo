@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { AddRoomComponent } from './rooms/add-room.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
-  templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  imports: [AddRoomComponent, HttpClientModule], 
+  templateUrl: './app.html'
 })
 export class AppComponent {}
